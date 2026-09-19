@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>รอมานานเท่าไรแล้ว — คนไทยที่ตกงานเกินหนึ่งปี</title>
+<meta name="description" content="เล่าเรื่องจากข้อมูลการว่างงานระยะยาวของไทย 2561–2568 พร้อมเสียงจากคนที่กำลังหางานจริง อัปเดตแบบเรียลไทม์">
+<meta property="og:title" content="รอมานานเท่าไรแล้ว — คนไทยที่ตกงานเกินหนึ่งปี">
+<meta property="og:description" content="สถิติทางการบอกว่ามีคนตกงานเกิน 1 ปี ราว 64,000 คน แต่บอกไม่ได้ว่าพวกเขาเป็นใคร นี่คือส่วนที่หายไป">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=Sarabun:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --paper:#f7f6f3;
+  --paper-2:#ffffff;
+  --sunk:#eceae4;
+  --ink:#16181d;
+  --ink-2:#4a4e57;
+  --ink-3:#7c818c;
+  --rule:#dcdad3;
+  --grid:#e5e3dc;
+  --teal:#0d5c66;
+  --teal-soft:#dfecee;
+  --amber:#a8590a;
+  --amber-soft:#f6ecdc;
+  --on-dark:#f7f6f3;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4;
+  --shadow:0 1px 2px rgba(22,24,29,.05), 0 14px 34px rgba(22,24,29,.06);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  color-scheme: dark;
+  --paper:#101317; --paper-2:#181c21; --sunk:#1f242a;
+  --ink:#eef0ee; --ink-2:#b2b7bd; --ink-3:#7e848c;
+  --rule:#2a2f36; --grid:#272c33;
+  --teal:#63b8c2; --teal-soft:#10333a;
+  --amber:#e0972f; --amber-soft:#33260f;
+  --on-dark:#101317;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 14px 34px rgba(0,0,0,.35);
+}}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --paper:#101317; --paper-2:#181c21; --sunk:#1f242a;
+  --ink:#eef0ee; --ink-2:#b2b7bd; --ink-3:#7e848c;
+  --rule:#2a2f36; --grid:#272c33;
+  --teal:#63b8c2; --teal-soft:#10333a;
+  --amber:#e0972f; --amber-soft:#33260f;
+  --on-dark:#101317;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 14px 34px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+section[id],header[id]{scroll-margin-top:66px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Sarabun",system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.8;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3,.disp{font-family:"Bai Jamjuree","Sarabun",sans-serif;font-weight:700;margin:0;line-height:1.25;text-wrap:balance}
+.num{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+a{color:var(--teal)}
+
+/* ---------- shell ---------- */
+.col{max-width:680px;margin-inline:auto;padding-inline:22px}
+.wide{max-width:1120px;margin-inline:auto;padding-inline:22px}
+
+/* ---------- nav ---------- */
+nav.bar{position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.bar-in{max-width:1120px;margin-inline:auto;padding:11px 22px;display:flex;gap:16px;align-items:center;justify-content:space-between}
+.brand{font-family:"Bai Jamjuree",sans-serif;font-weight:700;font-size:14.5px;letter-spacing:.01em;white-space:nowrap}
+.brand em{font-style:normal;color:var(--teal)}
+.bar-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.bar-links::-webkit-scrollbar{display:none}
+.bar-links a{font-size:13.5px;color:var(--ink-2);text-decoration:none;padding:5px 10px;border-radius:99px;white-space:nowrap}
+.bar-links a:hover{background:var(--sunk);color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{padding-block:72px 56px;border-bottom:1px solid var(--rule)}
+.kicker{font-family:"Bai Jamjuree",sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--teal)}
+h1{font-size:clamp(34px,7.2vw,60px);margin-top:14px;letter-spacing:-.015em}
+.hero .deck{font-size:clamp(17px,2.3vw,20px);color:var(--ink-2);margin-top:20px;max-width:60ch}
+.hero-num{display:flex;align-items:baseline;gap:14px;margin-top:38px;flex-wrap:wrap}
+.hero-num .big{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;
+  font-size:clamp(46px,11vw,84px);font-weight:500;line-height:1;letter-spacing:-.03em;color:var(--teal)}
+.hero-num .unit{font-size:19px;color:var(--ink-2);font-weight:600}
+.hero-cap{font-size:14.5px;color:var(--ink-3);margin-top:12px}
+.byline{margin-top:34px;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;color:var(--ink-3);
+  display:flex;flex-wrap:wrap;gap:6px 20px}
+.byline b{color:var(--ink-2);font-weight:600}
+
+/* ---------- chapters ---------- */
+section.ch{padding-block:64px}
+section.ch + section.ch{border-top:1px solid var(--rule)}
+.ch-no{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--amber);font-weight:500;letter-spacing:.08em}
+h2{font-size:clamp(25px,4.4vw,36px);margin-top:9px;letter-spacing:-.01em}
+.ch p{font-size:17.5px;color:var(--ink-2);margin:18px 0 0;max-width:64ch}
+.ch p strong{color:var(--ink);font-weight:600}
+.lead{font-size:19px!important;color:var(--ink)!important}
+
+/* pull quote / key stat */
+.pull{margin:34px 0 0;padding:22px 26px;background:var(--teal-soft);border-radius:4px 16px 16px 4px;
+  border-left:4px solid var(--teal)}
+.pull .p-num{font-family:"IBM Plex Mono",monospace;font-size:clamp(28px,6vw,42px);font-weight:500;
+  line-height:1.1;color:var(--teal);letter-spacing:-.02em}
+.pull .p-txt{font-size:16.5px;color:var(--ink-2);margin-top:9px;max-width:52ch}
+.pull.amber{background:var(--amber-soft);border-left-color:var(--amber)}
+.pull.amber .p-num{color:var(--amber)}
+
+/* how to read */
+.howto{margin-top:14px;font-size:14.5px;color:var(--ink-3);display:flex;gap:9px;align-items:flex-start;
+  background:var(--sunk);border-radius:10px;padding:11px 14px}
+.howto svg{flex:0 0 auto;margin-top:4px}
+
+/* figure band */
+.band{background:var(--paper-2);border-block:1px solid var(--rule);padding-block:44px;margin-top:40px}
+.fig h3{font-family:"Sarabun",sans-serif;font-size:18px;font-weight:700}
+.fig .sub{font-size:14.5px;color:var(--ink-3);margin-top:4px}
+.chart{width:100%;position:relative;margin-top:20px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.legend{display:flex;flex-wrap:wrap;gap:7px 18px;margin-top:14px;font-size:14px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.sw{width:12px;height:12px;border-radius:3px;flex:0 0 auto}
+.sw.line{height:3px;width:18px;border-radius:2px}
+
+/* 12-month explainer */
+.months{display:flex;gap:5px;margin-top:22px;flex-wrap:wrap}
+.months i{flex:1 1 20px;height:34px;border-radius:5px;background:var(--sunk);display:block;
+  border:1px solid var(--rule)}
+.months i.on{background:var(--amber);border-color:var(--amber)}
+.months-lab{display:flex;justify-content:space-between;font-size:13.5px;color:var(--ink-3);margin-top:8px}
+
+/* gap cards */
+.gaps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:30px}
+.gap{background:var(--paper-2);border:1px solid var(--rule);border-radius:14px;padding:18px}
+.gap .g-q{font-family:"Bai Jamjuree",sans-serif;font-weight:600;font-size:16.5px;color:var(--ink)}
+.gap .g-a{font-size:14.5px;color:var(--ink-3);margin-top:7px}
+.gap .g-tag{display:inline-block;font-size:12px;font-weight:600;color:var(--amber);background:var(--amber-soft);
+  border-radius:99px;padding:3px 10px;margin-top:11px}
+
+/* live */
+.live-head{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-top:26px}
+.live-pill{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink-2);
+  background:var(--paper-2);border:1px solid var(--rule);border-radius:99px;padding:6px 14px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ink-3);flex:0 0 auto}
+.dot.on{background:#0ca30c;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.live-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:22px}
+.lcard{background:var(--paper-2);border:1px solid var(--rule);border-radius:14px;padding:18px 20px}
+.lcard h3{font-family:"Sarabun",sans-serif;font-size:16px;font-weight:700}
+.lcard .lsub{font-size:13.5px;color:var(--ink-3);margin-top:3px;margin-bottom:14px}
+.brow{margin-bottom:13px}
+.brow-t{display:flex;justify-content:space-between;gap:12px;font-size:14.5px;align-items:baseline}
+.brow-t b{font-weight:400;color:var(--ink-2)}
+.brow-t .v{font-family:"IBM Plex Mono",monospace;font-weight:500;color:var(--ink);flex:0 0 auto}
+.track{height:9px;background:var(--sunk);border-radius:99px;margin-top:6px;overflow:hidden}
+.track i{display:block;height:100%;border-radius:99px;background:var(--teal);transition:width .5s ease}
+.track.amber i{background:var(--amber)}
+.empty{background:var(--paper-2);border:1px dashed var(--rule);border-radius:14px;padding:30px 24px;text-align:center;margin-top:22px}
+.empty .e-t{font-family:"Bai Jamjuree",sans-serif;font-weight:600;font-size:18px}
+.empty .e-d{font-size:15px;color:var(--ink-3);margin-top:8px;max-width:46ch;margin-inline:auto}
+
+/* CTA */
+.cta{background:var(--ink);color:var(--on-dark);border-radius:20px;padding:36px 32px;margin-top:40px}
+.cta h2{color:var(--on-dark);font-size:clamp(23px,4vw,31px)}
+.cta p{color:color-mix(in srgb, var(--on-dark) 72%, transparent);margin-top:14px;max-width:52ch;font-size:16.5px}
+.btn{display:inline-block;margin-top:22px;background:var(--on-dark);color:var(--ink);text-decoration:none;
+  font-family:"Bai Jamjuree",sans-serif;font-weight:600;font-size:16px;padding:13px 26px;border-radius:99px}
+.btn:hover{opacity:.88}
+.btn.ghost{background:transparent;color:var(--on-dark);border:1px solid color-mix(in srgb, var(--on-dark) 40%, transparent);margin-left:10px}
+
+/* dashboard */
+.controls{display:flex;flex-wrap:wrap;gap:12px 14px;align-items:flex-end;background:var(--paper-2);
+  border:1px solid var(--rule);border-radius:14px;padding:16px;margin-top:22px}
+.field{display:flex;flex-direction:column;gap:6px;flex:1 1 150px;min-width:140px}
+.field label{font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
+select{font-family:inherit;font-size:15px;color:var(--ink);background:var(--sunk);border:1px solid var(--rule);
+  border-radius:10px;padding:9px 11px;width:100%}
+select:focus-visible{outline:2px solid var(--teal);outline-offset:1px}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:14px;background:var(--paper-2);margin-top:18px}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:460px}
+th,td{text-align:right;padding:9px 14px;border-bottom:1px solid var(--grid);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{background:var(--sunk);font-size:13px;font-weight:600;color:var(--ink-2);letter-spacing:.03em}
+tbody tr:last-child td{border-bottom:none}
+td.v{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+
+/* tooltip */
+.tip{position:fixed;pointer-events:none;z-index:60;background:var(--paper-2);border:1px solid var(--rule);
+  border-radius:10px;box-shadow:var(--shadow);padding:10px 13px;font-size:14px;opacity:0;transition:opacity .1s;max-width:240px}
+.tip .t-h{font-weight:700;font-size:13.5px;margin-bottom:5px}
+.tip .t-r{display:flex;justify-content:space-between;gap:16px;color:var(--ink-2)}
+.tip .t-v{font-family:"IBM Plex Mono",monospace;color:var(--ink);font-weight:500}
+
+/* footer */
+footer{background:var(--paper-2);border-top:1px solid var(--rule);padding-block:44px;margin-top:0}
+footer h3{font-family:"Bai Jamjuree",sans-serif;font-size:16px;margin-bottom:10px}
+footer p,footer li{font-size:14.5px;color:var(--ink-2)}
+footer ul{padding-left:20px;margin:0}
+footer li{margin-bottom:7px}
+.foot-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.fine{margin-top:30px;padding-top:18px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--ink-3)}
+</style>
+</head>
+<body>
+
+<nav class="bar">
+  <div class="bar-in">
+    <div class="brand">รอมานาน<em>เท่าไรแล้ว</em></div>
+    <div class="bar-links">
+      <a href="#ch1">ตัวเลขคืออะไร</a>
+      <a href="#ch2">8 ปีที่ผ่านมา</a>
+      <a href="#ch3">ใครบ้าง</a>
+      <a href="#ch4">ที่ไหน</a>
+      <a href="#ch5">สิ่งที่ไม่รู้</a>
+      <a href="#live">เสียงจากคนจริง</a>
+      <a href="#dash">สำรวจเอง</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="col">
+    <div class="kicker">เล่าเรื่องจากข้อมูล · สำนักงานสถิติแห่งชาติ 2561–2568</div>
+    <h1>รอมานานเท่าไรแล้ว</h1>
+    <p class="deck">คนกลุ่มหนึ่งในประเทศไทยส่งใบสมัครงานมาเกินหนึ่งปีแล้วและยังไม่ได้งาน สถิติทางการนับพวกเขาได้ แต่ไม่รู้จักพวกเขา หน้านี้เล่าว่าตัวเลขบอกอะไรได้บ้าง และตรงไหนที่ต้องถามคนจริง</p>
+    <div class="hero-num">
+      <span class="big num" id="heroNum">0</span>
+      <span class="unit">คน</span>
+    </div>
+    <p class="hero-cap">คือจำนวนผู้ที่ว่างงานและหางานต่อเนื่องนานเกิน 1 ปี ในไตรมาส 3 ปี 2568 — คิดเป็นราว 1 ใน 5 ของผู้ว่างงานทั้งหมด</p>
+    <div class="byline">
+      <span><b>ข้อมูล</b> การสำรวจภาวะการทำงานของประชากร</span>
+      <span><b>ช่วงเวลา</b> 31 ไตรมาส</span>
+      <span><b>อัปเดตผลสำรวจ</b> อัตโนมัติทุก 1 นาที</span>
+    </div>
+  </div>
+</header>
+
+<!-- ======== บทที่ 1 ======== -->
+<section class="ch" id="ch1">
+  <div class="col">
+    <div class="ch-no">บทที่ 01</div>
+    <h2>“ว่างงานระยะยาว” แปลว่าอะไรกันแน่</h2>
+    <p class="lead">ไม่ใช่ทุกคนที่ตกงานจะถูกนับในตัวเลขนี้ ต้องหางานต่อเนื่องครบ 12 เดือนก่อน จึงจะเข้าเกณฑ์</p>
+    <div class="months" id="months" aria-hidden="true"></div>
+    <div class="months-lab"><span>เดือนที่ 1 — ยังไม่ถูกนับ</span><span>เดือนที่ 12 — เริ่มถูกนับ</span></div>
+    <p>คนที่เพิ่งออกจากงานเมื่อสามเดือนก่อนและยังหางานอยู่ทุกวัน <strong>ไม่ปรากฏในตัวเลขนี้เลย</strong> เขาจะปรากฏก็ต่อเมื่อผ่านครบหนึ่งปีไปแล้ว นั่นแปลว่าตัวเลขที่เห็นเป็นเหมือนภาพที่มาถึงช้า และเป็นยอดของภูเขาน้ำแข็งเท่านั้น</p>
+    <div class="pull">
+      <div class="p-num">0.16%</div>
+      <div class="p-txt">ของกำลังแรงงานไทยทั้งหมดอยู่ในภาวะนี้ ณ ไตรมาส 3 ปี 2568 ฟังดูน้อย แต่เมื่อคิดเป็นตัวคนคือประมาณ 64,400 คน มากกว่าประชากรของอำเภอขนาดกลางทั้งอำเภอ</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== บทที่ 2 ======== -->
+<section class="ch" id="ch2">
+  <div class="col">
+    <div class="ch-no">บทที่ 02</div>
+    <h2>แปดปีที่ผ่านมา เกิดอะไรขึ้น</h2>
+    <p class="lead">เส้นนี้นิ่งมากอยู่สองปี แล้วพุ่งขึ้นเกือบสามเท่า ก่อนจะค่อย ๆ ลงมาที่เดิม</p>
+  </div>
+  <div class="band">
+    <div class="wide fig">
+      <h3>อัตราการว่างงานระยะยาวทั้งประเทศ รายไตรมาส</h3>
+      <div class="sub">หน่วย: ร้อยละของกำลังแรงงาน · แถบสีคือช่วงที่โควิด-19 ระบาด</div>
+      <div class="chart" id="cNational"></div>
+      <div class="howto">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 7.2v4M8 4.9v.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <div>อ่านยังไง — เส้นยิ่งสูงแปลว่ามีคนตกงานยาวมากขึ้น แต่ละจุดคือหนึ่งไตรมาส (สามเดือน) แตะหรือชี้ที่เส้นเพื่อดูตัวเลขของไตรมาสนั้น</div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <p>จุดสูงสุดอยู่ที่ไตรมาส 3 ปี 2564 และไตรมาส 1 ปี 2565 ซึ่ง<strong>ช้ากว่าช่วงที่โควิดระบาดหนักราวหนึ่งปี</strong> เหตุผลอยู่ในบทที่แล้ว — คนที่ตกงานตอนล็อกดาวน์ต้องรอครบ 12 เดือนก่อนจึงจะถูกนับ ตัวเลขนี้จึงเป็นเหมือนเสียงสะท้อนที่ดังตามมาทีหลัง ไม่ใช่สัญญาณเตือนล่วงหน้า</p>
+    <p>ข่าวดีคือพอถึงปี 2566 เส้นกลับลงมาอยู่ที่ระดับก่อนโควิดได้จริง ข่าวที่ต้องระวังคือ ตัวเลขระดับประเทศแบบนี้กลบความต่างระหว่างพื้นที่และช่วงอายุไว้หมด ซึ่งเป็นเรื่องของสองบทถัดไป</p>
+  </div>
+</section>
+
+<!-- ======== บทที่ 3 ======== -->
+<section class="ch" id="ch3">
+  <div class="col">
+    <div class="ch-no">บทที่ 03</div>
+    <h2>สามในสี่คือคนอายุไม่เกิน 29 ปี</h2>
+    <p class="lead">ถ้าเลือกคนที่ตกงานยาวมาสี่คน สามคนจะเป็นคนหนุ่มสาว</p>
+  </div>
+  <div class="band">
+    <div class="wide fig">
+      <h3>อัตราการว่างงานระยะยาว แยกตามกลุ่มอายุ</h3>
+      <div class="sub">หน่วย: ร้อยละ · เทียบปีก่อนโควิดกับปีที่หนักที่สุด</div>
+      <div class="chart" id="cAge"></div>
+      <div class="legend" id="lAge"></div>
+      <div class="howto">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 7.2v4M8 4.9v.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <div>อ่านยังไง — แท่งยิ่งยาวแปลว่ากลุ่มอายุนั้นมีสัดส่วนคนตกงานยาวมากกว่า สังเกตว่าแท่งสั้นลงเรื่อย ๆ เมื่ออายุมากขึ้น</div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <p>ในปี 2561 คนอายุ 15–19 ปี มีสัดส่วนสูงกว่าคนอายุ 40 ปีขึ้นไปถึง <strong>57 เท่า</strong> พอเข้าปีโควิด ช่องว่างนี้แคบลงเหลือราว 11 เท่า ไม่ใช่เพราะคนหนุ่มสาวดีขึ้น แต่เพราะวัยกลางคนถูกกระทบหนักขึ้นมาก</p>
+    <div class="pull amber">
+      <div class="p-num">18 เท่า</div>
+      <div class="p-txt">คือขนาดที่กลุ่มอายุ 50–59 ปี เพิ่มขึ้นระหว่างปี 2561 ถึง 2565 จากเกือบศูนย์กลายเป็นกลุ่มที่เห็นได้ชัดในข้อมูล วิกฤตไม่ได้เลือกกระทบแค่คนเพิ่งจบ</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== บทที่ 4 ======== -->
+<section class="ch" id="ch4">
+  <div class="col">
+    <div class="ch-no">บทที่ 04</div>
+    <h2>ภาคใต้ไม่เหมือนที่อื่น และไม่ใช่เพิ่งเป็น</h2>
+    <p class="lead">ทุกปีตลอดหกปี ภาคใต้สูงกว่าค่าเฉลี่ยประเทศสองถึงสามเท่า</p>
+  </div>
+  <div class="band">
+    <div class="wide fig">
+      <h3>เปรียบเทียบรายภาค ค่าเฉลี่ยรายปี</h3>
+      <div class="sub">หน่วย: ร้อยละ · เส้นภาคใต้แยกตัวออกจากภาคอื่นชัดเจนทุกปี</div>
+      <div class="chart" id="cRegion"></div>
+      <div class="legend" id="lRegion"></div>
+      <div class="howto">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 7.2v4M8 4.9v.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <div>อ่านยังไง — แต่ละเส้นคือหนึ่งภาค เส้นที่ลอยอยู่สูงกว่าเพื่อนตลอดคือภาคใต้ ชี้ที่กราฟเพื่อดูตัวเลขของทุกภาคพร้อมกัน</div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <p>ช่องว่างระหว่างภาคใต้กับภาคอื่น <strong>กว้างกว่าช่องว่างระหว่างช่วงโควิดกับช่วงปกติเสียอีก</strong> ภาคกลาง ภาคเหนือ และภาคตะวันออกเฉียงเหนือ ไม่เคยมีค่าเฉลี่ยรายปีเกิน 0.26% เลยสักปี ขณะที่ภาคใต้เคยขึ้นไปถึง 0.96%</p>
+    <p>ข้อมูลชุดนี้บอกได้แค่ว่า “เป็นแบบนี้” แต่บอกไม่ได้ว่า “เพราะอะไร” เพราะในไฟล์ไม่มีข้อมูลอาชีพ อุตสาหกรรม หรือระดับการศึกษาเลยแม้แต่ช่องเดียว</p>
+  </div>
+</section>
+
+<!-- ======== บทที่ 5 ======== -->
+<section class="ch" id="ch5">
+  <div class="col">
+    <div class="ch-no">บทที่ 05</div>
+    <h2>คำถามที่ตัวเลขทางการตอบไม่ได้</h2>
+    <p class="lead">นี่คือจุดที่ข้อมูลเงียบ ไม่ใช่เพราะคำตอบไม่มีอยู่จริง แต่เพราะไม่เคยมีใครถาม</p>
+    <div class="gaps">
+      <div class="gap"><div class="g-q">พวกเขาจบอะไรมา</div><div class="g-a">ไฟล์ไม่มีช่องระดับการศึกษาหรือสาขาวิชา จึงบอกไม่ได้ว่าจบสายไหนเสี่ยงกว่ากัน</div><div class="g-tag">ไม่มีในข้อมูล</div></div>
+      <div class="gap"><div class="g-q">อยู่จังหวัดไหน</div><div class="g-a">ละเอียดที่สุดคือระดับภาค คนในจังหวัดเล็กจึงหายไปในค่าเฉลี่ยของทั้งภาค</div><div class="g-tag">ไม่มีในข้อมูล</div></div>
+      <div class="gap"><div class="g-q">ก่อนครบปี เขาหางานมานานแค่ไหน</div><div class="g-a">ข้อมูลเริ่มนับที่ 12 เดือน คนที่หางาน 3 หรือ 6 เดือนจึงไม่มีตัวตนในสถิติ</div><div class="g-tag">ไม่มีในข้อมูล</div></div>
+      <div class="gap"><div class="g-q">สุดท้ายได้งานคืนไหม</div><div class="g-a">ไม่มีการติดตามผล จึงไม่มีใครรู้ว่ากี่เปอร์เซ็นต์กลับเข้าทำงานได้ และใช้เวลานานแค่ไหน</div><div class="g-tag">ไม่มีในข้อมูล</div></div>
+      <div class="gap"><div class="g-q">ได้รับความช่วยเหลือหรือเปล่า</div><div class="g-a">ไม่มีข้อมูลการเข้าถึงสิทธิประกันสังคมกรณีว่างงาน</div><div class="g-tag">ไม่มีในข้อมูล</div></div>
+      <div class="gap"><div class="g-q">ย้ายที่อยู่แล้วดีขึ้นไหม</div><div class="g-a">ไม่มีข้อมูลการย้ายถิ่นเพื่อหางาน จึงตอบคำถามที่คนถามบ่อยที่สุดข้อหนึ่งไม่ได้</div><div class="g-tag">ไม่มีในข้อมูล</div></div>
+    </div>
+    <p style="margin-top:28px">คำถามหกข้อนี้ตอบได้ด้วยวิธีเดียว คือไปถามคนที่อยู่ในสถานการณ์จริง ส่วนถัดไปคือคำตอบที่กำลังทยอยเข้ามา</p>
+  </div>
+</section>
+
+<!-- ======== เสียงจากคนจริง ======== -->
+<section class="ch" id="live">
+  <div class="col">
+    <div class="ch-no">บทที่ 06</div>
+    <h2>เสียงจากคนจริง</h2>
+    <p class="lead">ส่วนนี้ไม่ได้มาจากสถิติราชการ แต่มาจากคนที่เข้ามาตอบแบบสอบถามนี้ และอัปเดตใหม่เองทุกนาที</p>
+    <div class="live-head">
+      <span class="live-pill"><span class="dot" id="liveDot"></span><span id="liveStatus">กำลังโหลดข้อมูล…</span></span>
+      <span class="live-pill"><b class="num" id="liveTotal">—</b>&nbsp;คำตอบ</span>
+    </div>
+    <div id="liveBody"></div>
+    <p style="margin-top:24px;font-size:15px;color:var(--ink-3)">หมายเหตุเรื่องความเป็นส่วนตัว — หน้านี้แสดงเฉพาะยอดรวม ไม่มีคำตอบรายบุคคลออกมาจากระบบเลย และกลุ่มที่มีคนตอบน้อยกว่า 3 คนจะถูกรวมเป็นกลุ่มเดียวเพื่อไม่ให้ย้อนระบุตัวผู้ตอบได้ ผลสำรวจนี้เป็นการสมัครใจตอบ จึงไม่ใช่ตัวแทนของประชากรทั้งประเทศแบบสถิติราชการ</p>
+  </div>
+</section>
+
+<!-- ======== CTA ======== -->
+<section class="ch" style="padding-top:0;border-top:none">
+  <div class="col">
+    <div class="cta">
+      <h2>ถ้าคุณเคยหางานนาน ๆ เล่าให้ฟังหน่อย</h2>
+      <p>ใช้เวลาประมาณ 5 นาที ไม่เก็บชื่อและอีเมล ทุกคำตอบจะกลายเป็นตัวเลขในหน้านี้ทันทีที่ส่ง และเป็นข้อมูลที่สถิติทางการยังไม่มี</p>
+      <a class="btn" id="formLink" href="#" target="_blank" rel="noopener">ตอบแบบสอบถาม</a>
+      <a class="btn ghost" href="#live">ดูผลที่มีตอนนี้</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======== DASHBOARD ======== -->
+<section class="ch" id="dash">
+  <div class="col">
+    <div class="ch-no">เครื่องมือ</div>
+    <h2>ลองสำรวจข้อมูลเอง</h2>
+    <p class="lead">เลือกดูกลุ่มที่สนใจได้ ไม่ต้องมีพื้นฐานสถิติ</p>
+    <div class="controls">
+      <div class="field"><label for="fView">อยากดูอะไร</label>
+        <select id="fView">
+          <option value="region">เปรียบเทียบรายภาค</option>
+          <option value="age">เปรียบเทียบตามกลุ่มอายุ</option>
+          <option value="sex">เปรียบเทียบชาย–หญิง</option>
+          <option value="area">ในเมือง–นอกเมือง</option>
+        </select></div>
+      <div class="field"><label for="fYear">ปี พ.ศ.</label><select id="fYear"></select></div>
+    </div>
+  </div>
+  <div class="band" style="margin-top:22px">
+    <div class="wide fig">
+      <h3 id="dashTitle">เปรียบเทียบรายภาค</h3>
+      <div class="sub" id="dashSub">หน่วย: ร้อยละของกำลังแรงงาน</div>
+      <div class="chart" id="cDash"></div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="tablewrap"><table id="dashTable"><thead><tr><th>กลุ่ม</th><th>ค่าปีที่เลือก</th><th>เทียบกับค่าเฉลี่ยประเทศ</th></tr></thead><tbody></tbody></table></div>
+  </div>
+</section>
+
+<footer>
+  <div class="col">
+    <div class="foot-cols">
+      <div>
+        <h3>ข้อมูลมาจากไหน</h3>
+        <ul>
+          <li>ชุดข้อมูลอัตราการว่างงานระยะยาว สำนักงานสถิติแห่งชาติ 14,202 แถว ครอบคลุมปี 2561–2568</li>
+          <li>ขนาดกำลังแรงงานรายไตรมาส จากรายงานการสำรวจภาวะการทำงานของประชากร</li>
+          <li>ผลสำรวจในบทที่ 6 มาจากแบบสอบถามออนไลน์ของโครงการนี้เอง</li>
+        </ul>
+      </div>
+      <div>
+        <h3>สิ่งที่ควรรู้ก่อนอ้างอิง</h3>
+        <ul>
+          <li>ข้อมูลปี 2567–2568 ในไฟล์ต้นทางเป็นจำนวนคน ไม่ใช่ร้อยละ แม้จะระบุหน่วยว่าร้อยละก็ตาม หน้านี้แยกสองช่วงออกจากกันแล้ว</li>
+          <li>ปี 2568 เปลี่ยนการแบ่งภาคจาก 5 เป็น 7 ภาค ตัวเลขภาคกลางและภาคใต้จึงเทียบกับปีก่อนหน้าตรง ๆ ไม่ได้</li>
+          <li>ปี 2568 มีข้อมูลถึงไตรมาส 3 ยังไม่ครบปี</li>
+          <li>ผลสำรวจเป็นการสมัครใจตอบ ไม่ใช่การสุ่มตัวอย่าง จึงใช้ประกอบความเข้าใจ ไม่ใช่แทนสถิติราชการ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">หน้านี้เผยแพร่เป็นข้อมูลสาธารณะเพื่อการศึกษา ตัวเลขทุกตัวคำนวณจากข้อมูลดิบโดยตรงและตรวจสอบย้อนกลับได้</div>
+  </div>
+</footer>
+
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================
+   ตั้งค่า — แก้ 2 บรรทัดนี้หลัง deploy Apps Script และสร้างฟอร์ม
+   ============================================================ */
+var API_URL  = 'https://script.google.com/macros/s/AKfycbyxwRKY4eOz-7nXzG7GklqDp9zWpFg3xwwGewIcWdaKrRoecBgtJHo0VFQUtmeTyRKL/exec';   // URL ที่ลงท้ายด้วย /exec จาก PublishSurveyData.gs
+var FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSelbkhTs4fx3OrwQxWr1I5ZkSsjf6pGsF8LscQ_SOPxM4Sdcw/viewform';   // ลิงก์ Google Form สำหรับปุ่ม "ตอบแบบสอบถาม"
+/* ============================================================ */
+
+(function(){
+"use strict";
+var D = {"rateQ":[{"y":2561,"q":1,"v":0.18},{"y":2561,"q":2,"v":0.15},{"y":2561,"q":3,"v":0.15},{"y":2561,"q":4,"v":0.15},{"y":2562,"q":1,"v":0.14},{"y":2562,"q":2,"v":0.13},{"y":2562,"q":3,"v":0.13},{"y":2562,"q":4,"v":0.14},{"y":2563,"q":1,"v":0.17},{"y":2563,"q":2,"v":0.17},{"y":2563,"q":3,"v":0.14},{"y":2563,"q":4,"v":0.21},{"y":2564,"q":1,"v":0.23},{"y":2564,"q":2,"v":0.38},{"y":2564,"q":3,"v":0.44},{"y":2564,"q":4,"v":0.35},{"y":2565,"q":1,"v":0.44},{"y":2565,"q":2,"v":0.36},{"y":2565,"q":3,"v":0.26},{"y":2565,"q":4,"v":0.28},{"y":2566,"q":1,"v":0.21},{"y":2566,"q":2,"v":0.18},{"y":2566,"q":3,"v":0.17},{"y":2566,"q":4,"v":0.15}],"rateRegionYear":{"กรุงเทพมหานคร":[0.18,0.16,0.2,0.39,0.452,0.218],"ภาคกลาง":[0.143,0.108,0.152,0.227,0.253,0.132],"ภาคเหนือ":[0.088,0.075,0.073,0.228,0.222,0.14],"ภาคตะวันออกเฉียงเหนือ":[0.098,0.092,0.103,0.23,0.22,0.132],"ภาคใต้":[0.395,0.3,0.415,0.96,0.76,0.368]},"rateAgeYear":{"15-19 ปี":[0.998,0.958,1.007,1.915,0.952,0.872],"20-24 ปี":[0.712,0.635,0.768,1.292,1.24,0.88],"25-29 ปี":[0.408,0.25,0.415,0.758,0.747,0.382],"30-34 ปี":[0.158,0.118,0.118,0.388,0.402,0.188],"35-39 ปี":[0.072,0.078,0.075,0.305,0.24,0.08],"40-49 ปี":[0.03,0.028,0.065,0.132,0.158,0.062],"50-59 ปี":[0.008,0.03,0.032,0.103,0.135,0.025],"60 ปีขึ้นไป":[0.008,0.002,0.015,0.038,0.012,0.012]},"rateSexYear":{"ชาย":[0.16,0.145,0.198,0.35,0.318,0.17],"หญิง":[0.158,0.12,0.143,0.35,0.36,0.185]},"rateAreaYear":{"ในเขตเทศบาล":[0.17,0.13,0.178,0.408,0.372,0.192],"นอกเขตเทศบาล":[0.155,0.132,0.165,0.308,0.308,0.165]},"cntQ":[{"y":2567,"q":1,"v":79.6,"m":47.5,"f":32.1},{"y":2567,"q":2,"v":69.9,"m":42.6,"f":27.3},{"y":2567,"q":3,"v":80.9,"m":45.3,"f":35.5},{"y":2567,"q":4,"v":67.6,"m":32.1,"f":35.6},{"y":2568,"q":1,"v":68.2,"m":34.5,"f":33.7},{"y":2568,"q":2,"v":73.1,"m":39.8,"f":33.3},{"y":2568,"q":3,"v":64.4,"m":36.7,"f":27.7}],"cntAge":{"15-19 ปี":[8.9,5.2,9.7,5.2,3.7,4.7,4.5],"20-24 ปี":[33.1,23.9,30.2,23.0,30.1,28.7,29.4],"25-29 ปี":[22.2,23.2,21.3,16.0,17.6,24.0,15.1],"30-34 ปี":[5.2,6.9,10.7,5.8,7.7,8.4,9.3],"35-39 ปี":[0.9,7.6,2.8,5.8,3.3,0.8,1.0],"40-49 ปี":[6.3,1.5,4.5,6.2,4.7,4.5,4.5],"50-59 ปี":[3.1,1.5,1.7,5.6,1.1,2.0,0.7],"60 ปีขึ้นไป":[0.0,0.1,0.0,0.1,0.1,0.0,0.0]},"cntRegion":{"กรุงเทพมหานคร":[8.7,13.5,14.9,6.1,5.5,7.7,5.7],"ภาคกลาง":[23.4,20.6,24.1,29.4,22.4,30.6,24.6],"ภาคเหนือ":[7.6,9.0,8.6,9.8,11.1,8.4,10.4],"ภาคตะวันออกเฉียงเหนือ":[22.2,10.0,15.4,6.8,12.6,8.9,6.2],"ภาคใต้":[17.7,16.8,17.8,15.6,10.8,12.0,11.0],"ภาคตะวันออก":[null,null,null,null,0.6,0.0,0.7],"ภาคใต้ชายแดน":[null,null,null,null,5.2,5.5,5.8]},"years":[2561,2562,2563,2564,2565,2566],"ages":["15-19 ปี","20-24 ปี","25-29 ปี","30-34 ปี","35-39 ปี","40-49 ปี","50-59 ปี","60 ปีขึ้นไป"],"reg5":["กรุงเทพมหานคร","ภาคกลาง","ภาคเหนือ","ภาคตะวันออกเฉียงเหนือ","ภาคใต้"],"reg7":["กรุงเทพมหานคร","ภาคกลาง","ภาคเหนือ","ภาคตะวันออกเฉียงเหนือ","ภาคใต้","ภาคตะวันออก","ภาคใต้ชายแดน"],"cntLabels":["2567 Q1","2567 Q2","2567 Q3","2567 Q4","2568 Q1","2568 Q2","2568 Q3"]};
+
+var cssv = function(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim();};
+var SER = function(){return [cssv('--s1'),cssv('--s2'),cssv('--s3'),cssv('--s4'),cssv('--s5')];};
+var NS='http://www.w3.org/2000/svg';
+function E(n,a,p){var e=document.createElementNS(NS,n);if(a)for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+function T(x,y,t,o){o=o||{};var e=E('text',{x:x,y:y,fill:o.fill||cssv('--ink-3'),'font-size':o.size||12,
+  'text-anchor':o.anchor||'middle','font-family':o.mono?'"IBM Plex Mono",monospace':'"Sarabun",sans-serif',
+  'font-weight':o.weight||400});e.textContent=t;return e;}
+function fmt(v,d){return v===null||v===undefined?'–':Number(v).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});}
+function niceStep(r){var p=Math.pow(10,Math.floor(Math.log10(r))),f=r/p;return (f<=1?1:f<=2?2:f<=2.5?2.5:f<=5?5:10)*p;}
+function ticks(max,n){if(!(max>0))return[0,1];max=+max.toPrecision(12);var s=niceStep(+(max/n).toPrecision(12));
+  var c=Math.max(1,Math.ceil(max/s-1e-9)),o=[];for(var i=0;i<=c;i++)o.push(+(i*s).toFixed(6));return o;}
+
+var tip=document.getElementById('tip');
+function showTip(ev,html){tip.innerHTML=html;tip.style.opacity='1';
+  var r=tip.getBoundingClientRect(),x=ev.clientX+15,y=ev.clientY-8;
+  if(x+r.width>innerWidth-10)x=ev.clientX-r.width-15;
+  if(y+r.height>innerHeight-10)y=innerHeight-r.height-10;
+  if(y<10)y=10; tip.style.left=x+'px'; tip.style.top=y+'px';}
+function hideTip(){tip.style.opacity='0';}
+
+/* ---------- line chart ---------- */
+function lineChart(host,cfg){
+  host.innerHTML='';
+  var W=host.clientWidth||600, H=Math.max(250,Math.min(330,W*0.46));
+  var P={l:48,r:cfg.endLabels?74:18,t:16,b:42};
+  var svg=E('svg',{viewBox:'0 0 '+W+' '+H,role:'img'},host);
+  var iw=W-P.l-P.r, ih=H-P.t-P.b, max=0;
+  cfg.series.forEach(function(s){s.values.forEach(function(v){if(v!==null&&v>max)max=v;});});
+  var tk=ticks(max,4), ymax=tk[tk.length-1];
+  var X=function(i){return P.l+(cfg.xs.length===1?iw/2:i*iw/(cfg.xs.length-1));};
+  var Y=function(v){return P.t+ih-(v/ymax)*ih;};
+  (cfg.bands||[]).forEach(function(b){
+    E('rect',{x:X(b.from),y:P.t,width:X(b.to)-X(b.from),height:ih,fill:cssv('--teal-soft'),rx:4},svg);
+    svg.appendChild(T((X(b.from)+X(b.to))/2,P.t+15,b.label,{size:12,weight:600,fill:cssv('--ink-3')}));
+  });
+  tk.forEach(function(v){E('line',{x1:P.l,x2:W-P.r,y1:Y(v),y2:Y(v),stroke:cssv('--grid')},svg);
+    svg.appendChild(T(P.l-9,Y(v)+4,fmt(v,2),{anchor:'end',size:11.5,mono:true}));});
+  cfg.xs.forEach(function(x,i){ if(cfg.xs.length>14?(i%4===0):true) svg.appendChild(T(X(i),H-P.b+18,x.short,{size:12})); });
+  E('line',{x1:P.l,x2:W-P.r,y1:Y(0),y2:Y(0),stroke:cssv('--rule'),'stroke-width':1.5},svg);
+  var ends=[];
+  cfg.series.forEach(function(s){
+    var d='',pen=false;
+    s.values.forEach(function(v,i){ if(v===null){pen=false;return;} d+=(pen?'L':'M')+X(i)+' '+Y(v); pen=true; });
+    E('path',{d:d,fill:'none',stroke:s.color,'stroke-width':2.5,'stroke-linecap':'round','stroke-linejoin':'round'},svg);
+    var li=-1; s.values.forEach(function(v,i){if(v!==null)li=i;});
+    if(li>=0){E('circle',{cx:X(li),cy:Y(s.values[li]),r:4.5,fill:s.color,stroke:cssv('--paper-2'),'stroke-width':2},svg);
+      if(cfg.endLabels)ends.push({x:X(li),y:Y(s.values[li]),name:s.short||s.name});}
+  });
+  if(ends.length){
+    ends.sort(function(a,b){return a.y-b.y;});
+    for(var i=1;i<ends.length;i++) if(ends[i].y-ends[i-1].y<15) ends[i].y=ends[i-1].y+15;
+    var over=ends[ends.length-1].y-(P.t+ih); if(over>0)ends.forEach(function(e){e.y-=over;});
+    ends.forEach(function(e){svg.appendChild(T(e.x+10,e.y+4,e.name,{anchor:'start',size:12.5,weight:600,fill:cssv('--ink-2')}));});
+  }
+  var cross=E('line',{y1:P.t,y2:P.t+ih,stroke:cssv('--ink-3'),'stroke-width':1,'stroke-dasharray':'3 3',opacity:0},svg);
+  var dots=cfg.series.map(function(s){return E('circle',{r:5.5,fill:s.color,stroke:cssv('--paper-2'),'stroke-width':2,opacity:0},svg);});
+  var hit=E('rect',{x:0,y:0,width:W,height:H,fill:'transparent'},svg);
+  hit.style.cursor='crosshair';
+  function mv(ev){
+    var b=svg.getBoundingClientRect(), px=(ev.clientX-b.left)*(W/b.width);
+    var i=Math.round((px-P.l)/(iw/Math.max(1,cfg.xs.length-1)));
+    i=Math.max(0,Math.min(cfg.xs.length-1,i));
+    cross.setAttribute('x1',X(i));cross.setAttribute('x2',X(i));cross.setAttribute('opacity',1);
+    var html='<div class="t-h">'+cfg.xs[i].full+'</div>';
+    cfg.series.forEach(function(s,k){var v=s.values[i];
+      if(v===null){dots[k].setAttribute('opacity',0);return;}
+      dots[k].setAttribute('cx',X(i));dots[k].setAttribute('cy',Y(v));dots[k].setAttribute('opacity',1);
+      html+='<div class="t-r"><span><span class="sw" style="display:inline-block;background:'+s.color+'"></span> '+s.name+'</span><span class="t-v">'+fmt(v,2)+'%</span></div>';});
+    showTip(ev,html);
+  }
+  hit.addEventListener('mousemove',mv);
+  hit.addEventListener('mouseleave',function(){hideTip();cross.setAttribute('opacity',0);dots.forEach(function(d){d.setAttribute('opacity',0);});});
+  hit.addEventListener('touchstart',function(e){mv(e.touches[0]);},{passive:true});
+  hit.addEventListener('touchmove',function(e){mv(e.touches[0]);},{passive:true});
+}
+
+/* ---------- horizontal bars ---------- */
+function roundRight(x,y,w,h,r){r=Math.min(r,w,h/2);
+  return 'M'+x+' '+y+'L'+(x+w-r)+' '+y+'Q'+(x+w)+' '+y+' '+(x+w)+' '+(y+r)+'L'+(x+w)+' '+(y+h-r)+'Q'+(x+w)+' '+(y+h)+' '+(x+w-r)+' '+(y+h)+'L'+x+' '+(y+h)+'Z';}
+function hbar(host,cfg){
+  host.innerHTML='';
+  var W=host.clientWidth||600;
+  var g=cfg.groups.length, rowH=g>1?(g*16+18):34, H=cfg.cats.length*rowH+40;
+  var P={l:Math.min(150,W*0.28),r:66,t:6,b:26};
+  var svg=E('svg',{viewBox:'0 0 '+W+' '+H,role:'img'},host);
+  var iw=W-P.l-P.r, max=0;
+  cfg.groups.forEach(function(gr){gr.values.forEach(function(v){if(v>max)max=v;});});
+  var tk=ticks(max,3), xmax=tk[tk.length-1];
+  var X=function(v){return P.l+(v/xmax)*iw;};
+  tk.forEach(function(v){E('line',{x1:X(v),x2:X(v),y1:P.t,y2:H-P.b,stroke:cssv('--grid')},svg);
+    svg.appendChild(T(X(v),H-P.b+17,fmt(v,2),{size:11.5,mono:true}));});
+  cfg.cats.forEach(function(c,i){
+    var y0=P.t+i*rowH;
+    svg.appendChild(T(P.l-10,y0+rowH/2+5,c,{anchor:'end',size:13.5,fill:cssv('--ink-2')}));
+    var bh=Math.max(9,(rowH-12)/g-3);
+    cfg.groups.forEach(function(gr,k){
+      var v=gr.values[i]||0, y=y0+6+k*(bh+3);
+      if(v>0){var p=E('path',{d:roundRight(P.l,y,Math.max(2,X(v)-P.l),bh,4),fill:gr.color},svg);
+        p.style.cursor='pointer';
+        p.addEventListener('mousemove',function(ev){showTip(ev,'<div class="t-h">'+c+'</div><div class="t-r"><span>'+gr.name+'</span><span class="t-v">'+fmt(v,2)+'%</span></div>');});
+        p.addEventListener('mouseleave',hideTip);}
+      svg.appendChild(T(Math.max(X(v),P.l)+7,y+bh/2+5,fmt(v,2),{anchor:'start',size:12,mono:true,fill:cssv('--ink-3')}));
+    });
+  });
+  E('line',{x1:P.l,x2:P.l,y1:P.t,y2:H-P.b,stroke:cssv('--rule'),'stroke-width':1.5},svg);
+}
+function legend(host,items,line){
+  host.innerHTML=items.map(function(i){return '<span><span class="sw'+(line?' line':'')+'" style="background:'+i.color+'"></span>'+i.name+'</span>';}).join('');
+}
+
+/* ---------- hero counter ---------- */
+(function(){
+  var el=document.getElementById('heroNum'), target=64400;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=target.toLocaleString('en-US');return;}
+  el.textContent=target.toLocaleString('en-US');
+  var t0=null, dur=1100;
+  requestAnimationFrame(function step(ts){
+    if(!t0)t0=ts;
+    var p=Math.min(1,(ts-t0)/dur), e=1-Math.pow(1-p,3);
+    el.textContent=Math.round(target*e).toLocaleString('en-US');
+    if(p<1)requestAnimationFrame(step);
+  });
+})();
+
+/* ---------- 12 months ---------- */
+(function(){
+  var m=document.getElementById('months'), h='';
+  for(var i=0;i<12;i++) h+='<i class="'+(i===11?'on':'')+'"></i>';
+  m.innerHTML=h;
+})();
+
+/* ---------- charts ---------- */
+var SHORT={'กรุงเทพมหานคร':'กรุงเทพฯ','ภาคกลาง':'กลาง','ภาคเหนือ':'เหนือ','ภาคตะวันออกเฉียงเหนือ':'อีสาน','ภาคใต้':'ใต้'};
+function drawStory(){
+  var S=SER();
+  var xs=D.rateQ.map(function(d){return {short:d.q===1?String(d.y):'',full:'ปี '+d.y+' ไตรมาส '+d.q};});
+  var covFrom=D.rateQ.findIndex(function(d){return d.y===2563&&d.q===2;});
+  var covTo=D.rateQ.findIndex(function(d){return d.y===2565&&d.q===2;});
+  lineChart(document.getElementById('cNational'),{
+    xs:xs, bands:[{from:covFrom,to:covTo,label:'ช่วงโควิด-19'}],
+    series:[{name:'ทั้งประเทศ',color:S[0],values:D.rateQ.map(function(d){return d.v;})}]});
+
+  hbar(document.getElementById('cAge'),{cats:D.ages,groups:[
+    {name:'ปี 2564 (ปีที่หนักที่สุด)',color:S[0],values:D.ages.map(function(g){return D.rateAgeYear[g][3];})},
+    {name:'ปี 2561 (ก่อนโควิด)',color:S[3],values:D.ages.map(function(g){return D.rateAgeYear[g][0];})}]});
+  legend(document.getElementById('lAge'),[{name:'ปี 2564 ปีที่หนักที่สุด',color:S[0]},{name:'ปี 2561 ก่อนโควิด',color:S[3]}]);
+
+  var reg=D.reg5.map(function(r,i){return {name:r,short:SHORT[r],color:S[i],values:D.rateRegionYear[r]};});
+  lineChart(document.getElementById('cRegion'),{
+    xs:D.years.map(function(y){return {short:String(y),full:'ปี '+y};}), endLabels:true, series:reg});
+  legend(document.getElementById('lRegion'),reg.map(function(r){return {name:r.name,color:r.color};}),true);
+  drawDash();
+}
+
+/* ---------- dashboard ---------- */
+var fView=document.getElementById('fView'), fYear=document.getElementById('fYear');
+D.years.forEach(function(y,i){var o=document.createElement('option');o.value=i;o.textContent=y;if(i===3)o.selected=true;fYear.appendChild(o);});
+fView.addEventListener('change',drawDash); fYear.addEventListener('change',drawDash);
+function drawDash(){
+  var S=SER(), view=fView.value, yi=+fYear.value, year=D.years[yi];
+  var map={region:[D.reg5,D.rateRegionYear,'เปรียบเทียบรายภาค'],
+           age:[D.ages,D.rateAgeYear,'เปรียบเทียบตามกลุ่มอายุ'],
+           sex:[['ชาย','หญิง'],D.rateSexYear,'เปรียบเทียบชาย–หญิง'],
+           area:[['ในเขตเทศบาล','นอกเขตเทศบาล'],D.rateAreaYear,'ในเมือง–นอกเมือง']};
+  var cats=map[view][0], src=map[view][1];
+  document.getElementById('dashTitle').textContent=map[view][2]+' ปี '+year;
+  document.getElementById('dashSub').textContent='หน่วย: ร้อยละของกำลังแรงงาน · ค่าเฉลี่ยทั้งปี '+year;
+  var vals=cats.map(function(c){return src[c][yi];});
+  hbar(document.getElementById('cDash'),{cats:cats,groups:[{name:'ปี '+year,color:S[0],values:vals}]});
+  var nat=0,n=0; D.rateQ.forEach(function(d){if(d.y===year&&d.v!==null){nat+=d.v;n++;}});
+  nat=n?nat/n:0;
+  var tb=document.querySelector('#dashTable tbody');
+  tb.innerHTML=cats.map(function(c,i){
+    var v=vals[i], ratio=(nat&&v!==null)?(v/nat):null;
+    var word=ratio===null?'–':(ratio>=1.15?'สูงกว่า '+fmt(ratio,1)+' เท่า':ratio<=0.85?'ต่ำกว่า '+fmt(1/ratio,1)+' เท่า':'ใกล้เคียง');
+    return '<tr><td>'+c+'</td><td class="v">'+fmt(v,2)+'%</td><td>'+word+'</td></tr>';}).join('');
+}
+
+/* ---------- live survey (JSONP) ---------- */
+var LIVE_FIELDS=[
+  ['duration','หางานมานานแค่ไหน','ข้อมูลที่สถิติทางการเริ่มนับที่ 12 เดือนเท่านั้น',true],
+  ['ltReturn','สุดท้ายได้งานคืนไหม','ไม่มีการติดตามผลในสถิติทางการเลย',true],
+  ['barriers','อุปสรรคหลักในการหางาน','เลือกได้หลายข้อ ตัวเลขจึงรวมกันเกิน 100%',false],
+  ['edu','ระดับการศึกษาของผู้ตอบ','ตัวแปรที่ไม่มีในชุดข้อมูลทางการ',false],
+  ['social','เข้าถึงสิทธิประกันสังคมหรือไม่','ตัวแปรที่ไม่มีในชุดข้อมูลทางการ',true],
+  ['wants','ข้อมูลที่คนอยากให้เปิดเพิ่ม','เลือกได้สูงสุด 3 ข้อ',false]
+];
+function renderLive(d){
+  var body=document.getElementById('liveBody');
+  document.getElementById('liveTotal').textContent=d.total.toLocaleString('en-US');
+  if(!d.total){ body.innerHTML='<div class="empty"><div class="e-t">ยังไม่มีคำตอบเข้ามา</div>'+
+    '<div class="e-d">แบบสอบถามเพิ่งเปิด ถ้าคุณเคยหางานนาน ๆ คำตอบแรกอาจเป็นของคุณก็ได้</div></div>'; return; }
+  var h='<div class="live-grid">';
+  LIVE_FIELDS.forEach(function(f){
+    var c=d.counts[f[0]]; if(!c)return;
+    var ent=Object.keys(c).map(function(k){return [k,c[k]];}).sort(function(a,b){return b[1]-a[1];});
+    if(!ent.length)return;
+    var tot=ent.reduce(function(s,e){return s+e[1];},0), mx=ent[0][1];
+    h+='<div class="lcard"><h3>'+f[1]+'</h3><div class="lsub">'+f[2]+'</div>';
+    ent.slice(0,7).forEach(function(e){
+      var pct=Math.round(e[1]/tot*1000)/10;
+      h+='<div class="brow"><div class="brow-t"><b>'+e[0]+'</b><span class="v">'+pct+'%</span></div>'+
+         '<div class="track'+(f[3]?'':' amber')+'"><i style="width:'+(e[1]/mx*100)+'%"></i></div></div>';
+    });
+    h+='</div>';
+  });
+  h+='</div>';
+  body.innerHTML=h;
+}
+function liveError(msg){
+  document.getElementById('liveDot').classList.remove('on');
+  document.getElementById('liveStatus').textContent=msg;
+  if(!document.getElementById('liveBody').innerHTML){
+    document.getElementById('liveBody').innerHTML='<div class="empty"><div class="e-t">ยังไม่มีผลสำรวจแสดงตอนนี้</div>'+
+      '<div class="e-d">ระบบกำลังรอคำตอบชุดแรก ลองกลับมาดูใหม่อีกครั้ง หรือร่วมตอบแบบสอบถามด้านล่างได้เลย</div></div>';
+  }
+}
+var jsonpN=0;
+function fetchLive(){
+  if(!API_URL){ liveError('ยังไม่ได้เชื่อมต่อแหล่งข้อมูล'); return; }
+  var cbName='__live'+(++jsonpN);
+  var done=false;
+  window[cbName]=function(d){
+    done=true;
+    try{ delete window[cbName]; }catch(e){ window[cbName]=undefined; }
+    if(s.parentNode)s.parentNode.removeChild(s);
+    if(!d||!d.ok){ liveError('ดึงข้อมูลไม่สำเร็จ'); return; }
+    document.getElementById('liveDot').classList.add('on');
+    var t=new Date(d.updatedAt);
+    document.getElementById('liveStatus').textContent='อัปเดตล่าสุด '+
+      t.toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'})+' น.';
+    renderLive(d);
+  };
+  var s=document.createElement('script');
+  s.src=API_URL+(API_URL.indexOf('?')>-1?'&':'?')+'callback='+cbName+'&t='+Date.now();
+  s.onerror=function(){ if(!done)liveError('เชื่อมต่อแหล่งข้อมูลไม่ได้'); };
+  document.head.appendChild(s);
+  setTimeout(function(){ if(!done) liveError('แหล่งข้อมูลไม่ตอบกลับ'); }, 12000);
+}
+
+/* ---------- boot ---------- */
+if(FORM_URL){document.getElementById('formLink').href=FORM_URL;}
+else{var fl=document.getElementById('formLink');fl.href='#live';fl.textContent='แบบสอบถามกำลังจะเปิด';}
+drawStory();
+fetchLive();
+setInterval(fetchLive,60000);
+var rt; addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(drawStory,200);});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(){setTimeout(drawStory,60);});
+})();
+</script>
+</body>
+</html>
