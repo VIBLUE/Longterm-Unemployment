@@ -5,11 +5,13 @@
 
 ```
 ├─ index.html          ← เนื้อหาทั้งหมดของหน้าเว็บ
+├─ credits.html        ← หน้าผู้จัดทำ (รูปอยู่ใน img/)
 ├─ css/style.css       ← หน้าตา, โหมดมืด, parallax
 ├─ js/config.js        ← ★ ลิงก์ API และลิงก์ฟอร์ม (ไฟล์เดียวที่ต้องแก้ตอนตั้งค่า)
 ├─ js/data.js          ← ข้อมูล สนง.สถิติฯ (ห้ามแก้)
+├─ js/common.js        ← ใช้ร่วมทุกหน้า: สลับธีม, parallax, transition เปลี่ยนหน้า
 ├─ js/charts.js        ← ตัววาดกราฟ SVG
-├─ js/app.js           ← ประกอบหน้า, dashboard, ผลสำรวจสด, parallax
+├─ js/app.js           ← หน้าหลัก: กราฟ, dashboard, ผลสำรวจสด
 ├─ backup/v1-original/ ← เวอร์ชันแรก (ไฟล์เดียว) เก็บไว้เผื่อย้อนกลับ
 └─ README.md           ← ไฟล์นี้
 ```

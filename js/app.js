@@ -1,6 +1,6 @@
 /* =============================================================
    ประกอบหน้า: hero, กราฟในเรื่อง, dashboard, ผลสำรวจสด, UI
-   ต้องโหลดหลัง config.js, data.js, charts.js
+   ต้องโหลดหลัง common.js, config.js, data.js, charts.js
    ============================================================= */
 (function(){
 "use strict";
@@ -9,15 +9,8 @@ var $=function(id){return document.getElementById(id);};
 var reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 var hasIO='IntersectionObserver' in window;
 
-/* ---------- theme toggle ---------- */
-var root=document.documentElement;
-function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null;}}
-function isDark(){var t=root.getAttribute('data-theme');return t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;}
-$('themeBtn').addEventListener('click',function(){
-  var next=isDark()?'light':'dark';
-  root.setAttribute('data-theme',next); store('ltu-theme',next);
-  redrawAll();
-});
+// ธีมสลับใน common.js — วาดกราฟใหม่ให้สีตรงกับธีม
+addEventListener('ltu:theme',function(){redrawAll();});
 
 /* ---------- hero counter ---------- */
 (function(){
@@ -226,20 +219,6 @@ if(hasIO&&!reduced){
   i.style.cssText='left:'+t[1]+'%;top:'+t[2]+'%;width:'+t[3]+'px;height:'+t[3]+'px';
   document.querySelector('.hero-scene .'+t[0]).appendChild(i);
 });
-var pxEls=[].slice.call(document.querySelectorAll('[data-px]')), pxTick=false;
-function parallax(){
-  pxTick=false;
-  var vh=innerHeight;
-  pxEls.forEach(function(el){
-    var r=el.getBoundingClientRect();
-    if(r.bottom<-100||r.top>vh+100)return;          // นอกจอ ไม่ต้องคำนวณ
-    var p=(r.top+r.height/2-vh/2)/(vh/2+r.height/2);
-    el.style.setProperty('--p',Math.max(-1,Math.min(1,p)).toFixed(4));
-  });
-}
-function queuePx(){ if(!pxTick){pxTick=true;requestAnimationFrame(parallax);} }
-if(!reduced){ addEventListener('scroll',queuePx,{passive:true}); addEventListener('resize',queuePx); parallax(); }
-
 /* ---------- boot ---------- */
 var fl=$('formLink');
 if(FORM_URL){fl.href=FORM_URL;}

@@ -3,6 +3,7 @@
    1. tokens   2. base   3. layout   4. nav   5. hero
    6. chapters 7. figures 8. cards  9. live  10. cta
    11. dashboard 12. tooltip 13. footer 14. parallax 15. motion
+   16. page transitions 17. credits page
    ============================================================= */
 
 /* ---------- 1. tokens ---------- */
@@ -104,6 +105,10 @@ nav.bar{position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--pap
   :root:not([data-theme="light"]) .theme-btn .i-sun{display:block}
   :root:not([data-theme="light"]) .theme-btn .i-moon{display:none}
 }
+.nav-cta{flex:0 0 auto;margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;
+  color:var(--teal);text-decoration:none;padding:8px 14px;border-radius:99px;border:1px solid color-mix(in srgb, var(--teal) 35%, transparent);
+  white-space:nowrap;transition:background-color .2s}
+.nav-cta:hover{background:var(--teal-soft)}
 .progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--teal);
   transform-origin:0 50%;transform:scaleX(0)}
 @media (max-width:720px){
@@ -111,6 +116,7 @@ nav.bar{position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--pap
   .brand{order:1}
   .theme-btn{order:2}
   .bar-links{order:3;flex-basis:100%;justify-content:flex-start;margin-inline:-16px;padding-inline:12px}
+  .nav-cta{order:2;margin-left:auto}
   :root{--nav-h:100px}
 }
 
@@ -120,7 +126,7 @@ nav.bar{position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--pap
     radial-gradient(60% 70% at 85% 10%, color-mix(in srgb, var(--teal) 10%, transparent), transparent 70%),
     var(--paper)}
 .hero .col{position:relative}
-.kicker{font-family:"Bai Jamjuree",sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.14em;
+.kicker{font-family:"Bai Jamjuree",sans-serif;font-size:13px;font-weight:600;letter-spacing:.03em;
   text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:12px}
 .kicker::before{content:"";width:28px;height:2px;background:currentColor;flex:0 0 auto}
 h1{font-size:clamp(36px,7.2vw,62px);margin-top:14px;letter-spacing:-.015em}
@@ -361,3 +367,51 @@ section.ch:nth-of-type(even) .ch-bg{right:auto;left:-.06em}
   nav.bar,.cta,.scroll-cue,.theme-btn,#dash .controls{display:none}
   .band{border:none}
 }
+
+/* ---------- 16. page transitions ----------
+   Chrome/Edge/Safari ใหม่: cross-document View Transitions (ไม่ต้องใช้ JS)
+   หน้าใหม่เลื่อนขึ้นมาเหมือนม่าน ส่วนแถบเมนูค้างอยู่ที่เดิม */
+@view-transition{navigation:auto}
+nav.bar{view-transition-name:site-nav}
+::view-transition-old(root){animation:vt-out .45s cubic-bezier(.4,0,.2,1) both}
+::view-transition-new(root){animation:vt-in .65s cubic-bezier(.2,.7,.2,1) both}
+@keyframes vt-out{to{opacity:0;transform:translateY(-4%) scale(.97)}}
+@keyframes vt-in{from{clip-path:inset(100% 0 0 0);transform:translateY(8%)}to{clip-path:inset(0);transform:none}}
+/* เบราว์เซอร์ที่ไม่รองรับ: ม่านสีเดียวกับแบรนด์ (common.js ใส่คลาส) */
+.no-vt body::after{content:"";position:fixed;inset:0;z-index:200;background:var(--teal);pointer-events:none;
+  transform:translateY(100%)}
+.no-vt.leaving body::after{transition:transform .42s cubic-bezier(.7,0,.3,1);transform:none}
+.no-vt.arriving body::after{animation:curtain-up .6s cubic-bezier(.7,0,.3,1) .05s both}
+@keyframes curtain-up{from{transform:none}to{transform:translateY(-100%)}}
+@media (prefers-reduced-motion: reduce){
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+  .no-vt body::after{display:none}
+}
+
+/* ---------- 17. credits page ---------- */
+.team-hero{min-height:calc(72svh - var(--nav-h))}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:56px 40px;margin-top:8px}
+.person{margin:0;position:relative}
+.portrait{position:relative;aspect-ratio:4/5;border-radius:22px;overflow:hidden;z-index:1;
+  background:var(--teal-soft);box-shadow:var(--shadow)}
+.portrait img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;object-position:50% 20%;
+  translate:0 calc(var(--p) * var(--pi) * -36px);transition:scale .6s cubic-bezier(.2,.7,.2,1)}
+.person:hover .portrait img{scale:1.04}
+/* กรอบเส้นเหลื่อมด้านหลัง ลอยคนละความเร็วกับรูป */
+.person::before{content:"";position:absolute;left:18px;right:-18px;top:18px;aspect-ratio:4/5;z-index:0;
+  border:1.5px solid color-mix(in srgb, var(--amber) 55%, transparent);border-radius:22px;
+  translate:0 calc(var(--p) * var(--pi) * 40px)}
+.person:nth-child(even)::before{left:-18px;right:18px}
+.person figcaption{position:relative;z-index:1;margin-top:26px}
+.person .p-no{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--amber);letter-spacing:.08em;
+  display:flex;align-items:center;gap:12px}
+.person .p-no::after{content:"";height:1px;width:48px;background:color-mix(in srgb, var(--amber) 45%, transparent)}
+.person .p-name{font-family:"Bai Jamjuree","Sarabun",sans-serif;font-weight:700;font-size:clamp(24px,3.4vw,32px);
+  line-height:1.3;margin-top:6px}
+@media (min-width:721px){ .person:nth-child(even){margin-top:90px} }
+.person .p-id{font-size:14.5px;color:var(--ink-3);margin-top:4px}
+.person .p-id .num{color:var(--ink-2);letter-spacing:.02em}
+.team-wrap{max-width:880px;margin-inline:auto;padding-inline:22px}
+@media (max-width:480px){.team-wrap{padding-inline:16px}.team{gap:48px}}
+.back-link{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font-weight:600;color:var(--teal);text-decoration:none}
+.back-link:hover{text-decoration:underline}
